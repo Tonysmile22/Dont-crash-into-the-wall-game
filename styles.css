@@ -1,0 +1,117 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  --color-1: #ff6b6b;
+  --color-2: #ffd166;
+  --color-3: #06d6a0;
+  --color-4: #118ab2;
+  --color-5: #073b4c;
+  --color-6: #ff9f1c;
+  --color-7: #8338ec;
+  background-color: --color-1;
+  animation: background-animation 10s infinite;
+}
+
+@keyframes background-animation {
+  0%,
+  100% {
+    background-color: --color-1;
+  }
+  14.28% {
+    background-color: --color-2;
+  }
+  28.56% {
+    background-color: --color-3;
+  }
+  42.84% {
+    background-color: --color-4;
+  }
+  57.12% {
+    background-color: --color-5;
+  }
+  71.40% {
+    background-color: --color-6;
+  }
+  85.68% {
+    background-color: --color-7;
+  }
+}
+
+.title {
+  z-index: 10;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inset: 0;
+  margin: 0;
+  flex-direction: column;
+}
+
+.subtitle {
+  margin-top: 0.5rem;
+}
+
+.hide {
+  display: none;
+}
+
+.bird {
+  --bird-top: -1000;
+  --bird-size: 50px;
+  position: absolute;
+  background-color: hsl(50, 75%, 50%);
+  width: var(--bird-size);
+  height: var(--bird-size);
+  left: var(--bird-size);
+  top: calc(var(--bird-top) * 1px);
+  border-radius: 50%;
+}
+
+.pipe {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(var(--pipe-width) * 1px);
+  left: calc(var(--pipe-left) * 1px);
+}
+
+:root {
+  --color-1: #ff6b6b;
+  --color-2: #ffd166;
+  --color-3: #06d6a0;
+}
+
+.pipe > .segment {
+  position: absolute;
+  width: 100%;
+  background-color: --color-1;
+  animation: background-animation 10s infinite;
+}
+
+@keyframes background-animation {
+  0%,
+  100% {
+    background-color: var(--color-1);
+  }
+  33.33% {
+    background-color: var(--color-2);
+  }
+  66.66% {
+    background-color: var(--color-3);
+  }
+}
+
+.pipe > .top {
+  top: 0;
+  bottom: calc(var(--hole-top) * 1px);
+}
+
+.pipe > .bottom {
+  bottom: 0;
+  top: calc(100vh - (var(--hole-top) * 1px) + calc(var(--hole-height) * 1px));
+}
